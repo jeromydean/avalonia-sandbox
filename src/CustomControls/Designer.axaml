@@ -68,12 +68,11 @@
               Height="{Binding ElementName=ScrollViewer, Path=Height}"
               Background="{TemplateBinding VerticalRulerBackground}"
               Orientation="Vertical" />
-            <Canvas
+            <controls:PointerPathsCanvas
               Grid.Row="1"
               Grid.Column="1"
               Width="960"
-              Height="960"
-              Background="White" />
+              Height="960" />
           </Grid>
         </ScrollViewer>
       </ControlTemplate>

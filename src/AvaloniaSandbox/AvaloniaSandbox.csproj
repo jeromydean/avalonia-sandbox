@@ -9,7 +9,7 @@
     
     <!-- one of these settings messed up the publish for linux-x64 -->
     <!-- use the publish profiles for now -->
-
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
     <!--<PublishSingleFile>true</PublishSingleFile>
     <SelfContained>true</SelfContained>
     <PublishTrimmed>true</PublishTrimmed>

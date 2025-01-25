@@ -18,8 +18,8 @@
 
   <Design.PreviewWith>
     <StackPanel
-      Width="96"
-      Height="96"
+      Width="300"
+      Height="300"
       Spacing="9.6"
       Background="{DynamicResource SystemRegionBrush}">
       <controls:Designer
@@ -38,42 +38,176 @@
           HorizontalScrollBarVisibility="Auto"
           VerticalScrollBarVisibility="Auto"
           AllowAutoHide="True">
-          <Grid
-            ShowGridLines="True">
-            <Grid.RowDefinitions>
-              <RowDefinition Height="25" />
-              <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-              <ColumnDefinition Width="25" />
-              <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
-            <Rectangle
-              Grid.Row="0"
-              Grid.Column="0"
-              Width="25"
-              Height="25"
-              Fill="#ffffffff" />
-            <!-- Background="{TemplateBinding RulerBackground}" -->
-            <!-- Background="{Binding RulerBackground, RelativeSource={RelativeSource TemplatedParent}}" -->
-            <controls:Ruler
-              Grid.Row="0"
-              Grid.Column="1"
-              Width="{Binding ElementName=ScrollViewer, Path=Width}"
-              Background="{TemplateBinding HorizontalRulerBackground}"
-              Orientation="Horizontal" />
-            <controls:Ruler
-              Grid.Row="1"
-              Grid.Column="0"
-              Height="{Binding ElementName=ScrollViewer, Path=Height}"
-              Background="{TemplateBinding VerticalRulerBackground}"
-              Orientation="Vertical" />
-            <controls:PointerPathsCanvas
-              Grid.Row="1"
-              Grid.Column="1"
-              Width="1920"
-              Height="1920" />
-          </Grid>
+          <LayoutTransformControl
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+            <LayoutTransformControl.LayoutTransform>
+              <ScaleTransform
+                ScaleX="{Binding ElementName=DesignerCanvas, Path=ScaleX}"
+                ScaleY="{Binding ElementName=DesignerCanvas, Path=ScaleY}" />
+            </LayoutTransformControl.LayoutTransform>
+            <Grid
+              ShowGridLines="True">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="25" />
+                <RowDefinition Height="Auto" />
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="Auto" />
+              </Grid.ColumnDefinitions>
+              <Rectangle
+                Grid.Row="0"
+                Grid.Column="0"
+                Width="25"
+                Height="25"
+                Fill="#ffffffff" />
+              <!-- Background="{TemplateBinding RulerBackground}" -->
+              <!-- Background="{Binding RulerBackground, RelativeSource={RelativeSource TemplatedParent}}" -->
+              <controls:Ruler
+                Grid.Row="0"
+                Grid.Column="1"
+                Width="{Binding ElementName=ScrollViewer, Path=Width}"
+                Background="{TemplateBinding HorizontalRulerBackground}"
+                Orientation="Horizontal" />
+              <controls:Ruler
+                Grid.Row="1"
+                Grid.Column="0"
+                Height="{Binding ElementName=ScrollViewer, Path=Height}"
+                Background="{TemplateBinding VerticalRulerBackground}"
+                Orientation="Vertical" />
+              <controls:DesignerCanvas
+                x:Name="DesignerCanvas"
+                Grid.Row="1"
+                Grid.Column="1"
+                Width="1920"
+                Height="1920">
+                <controls:DesignerCanvas.Background>
+                  <DrawingBrush
+                    TileMode="Tile"
+                    SourceRect="0,0,96,96"
+                    DestinationRect="0,0,96,96">
+                    <DrawingBrush.Drawing>
+                      <DrawingGroup>
+                        <GeometryDrawing>
+                          <GeometryDrawing.Geometry>
+                            <RectangleGeometry
+                              Rect="0,0,96,96" />
+                          </GeometryDrawing.Geometry>
+                          <GeometryDrawing.Brush>
+                            <SolidColorBrush
+                              Color="#e7e7e7" />
+                          </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                        <GeometryDrawing>
+                          <GeometryDrawing.Geometry>
+                            <LineGeometry
+                              StartPoint="24,0"
+                              EndPoint="24,96" />
+                          </GeometryDrawing.Geometry>
+                          <GeometryDrawing.Pen>
+                            <Pen
+                              Brush="#ff96ade9"
+                              Thickness="1" />
+                          </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                        <GeometryDrawing>
+                          <GeometryDrawing.Geometry>
+                            <LineGeometry
+                              StartPoint="48,0"
+                              EndPoint="48,96" />
+                          </GeometryDrawing.Geometry>
+                          <GeometryDrawing.Pen>
+                            <Pen
+                              Brush="#ff96ade9"
+                              Thickness="2" />
+                          </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                        <GeometryDrawing>
+                          <GeometryDrawing.Geometry>
+                            <LineGeometry
+                              StartPoint="72,0"
+                              EndPoint="72,96" />
+                          </GeometryDrawing.Geometry>
+                          <GeometryDrawing.Pen>
+                            <Pen
+                              Brush="#ff96ade9"
+                              Thickness="1" />
+                          </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                        <GeometryDrawing>
+                          <GeometryDrawing.Geometry>
+                            <LineGeometry
+                              StartPoint="96,0"
+                              EndPoint="96,96" />
+                          </GeometryDrawing.Geometry>
+                          <GeometryDrawing.Pen>
+                            <Pen
+                              Brush="#ff96ade9"
+                              Thickness="4" />
+                          </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                        <GeometryDrawing>
+                          <GeometryDrawing.Geometry>
+                            <LineGeometry
+                              StartPoint="0,24"
+                              EndPoint="96,24" />
+                          </GeometryDrawing.Geometry>
+                          <GeometryDrawing.Pen>
+                            <Pen
+                              Brush="#ff96ade9"
+                              Thickness="1" />
+                          </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                        <GeometryDrawing>
+                          <GeometryDrawing.Geometry>
+                            <LineGeometry
+                              StartPoint="0,48"
+                              EndPoint="96,48" />
+                          </GeometryDrawing.Geometry>
+                          <GeometryDrawing.Pen>
+                            <Pen
+                              Brush="#ff96ade9"
+                              Thickness="2" />
+                          </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                        <GeometryDrawing>
+                          <GeometryDrawing.Geometry>
+                            <LineGeometry
+                              StartPoint="0,72"
+                              EndPoint="96,72" />
+                          </GeometryDrawing.Geometry>
+                          <GeometryDrawing.Pen>
+                            <Pen
+                              Brush="#ff96ade9"
+                              Thickness="1" />
+                          </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                        <GeometryDrawing>
+                          <GeometryDrawing.Geometry>
+                            <LineGeometry
+                              StartPoint="0,96"
+                              EndPoint="96,96" />
+                          </GeometryDrawing.Geometry>
+                          <GeometryDrawing.Pen>
+                            <Pen
+                              Brush="#ff96ade9"
+                              Thickness="4" />
+                          </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                      </DrawingGroup>
+                    </DrawingBrush.Drawing>
+                  </DrawingBrush>
+                </controls:DesignerCanvas.Background>
+                <controls:PointerPathsCanvas
+                  x:Name="Canvas"
+                  Canvas.Left="0"
+                  Canvas.Top="0"
+                  Width="1920"
+                  Height="1920" />
+              </controls:DesignerCanvas>
+            </Grid>
+          </LayoutTransformControl>
         </ScrollViewer>
       </ControlTemplate>
     </Setter>

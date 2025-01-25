@@ -48,13 +48,6 @@ namespace CustomControls
           {
             SKCanvas canvas = skiaLease.SkCanvas;
             {
-              //fill background
-              canvas.DrawRect(0, 0, (float)Bounds.Width, (float)Bounds.Height, new SKPaint
-              {
-                Style = SKPaintStyle.Fill,
-                Color = SKColors.White
-              });
-
               SKPaint pathStrokePaint = new SKPaint
               {
                 Style = SKPaintStyle.Stroke,

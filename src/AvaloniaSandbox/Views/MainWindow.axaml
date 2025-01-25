@@ -18,7 +18,12 @@
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainWindowViewModel/>
     </Design.DataContext>
-  <Grid
+  <customControls:Designer
+    Grid.Row="1"
+    Grid.Column="0"
+    HorizontalRulerBackground="Red"
+    VerticalRulerBackground="Blue" />
+  <!--<Grid
     ShowGridLines="True">
     <Grid.RowDefinitions>
       <RowDefinition />
@@ -33,5 +38,5 @@
       Grid.Column="0"
       HorizontalRulerBackground="Red"
       VerticalRulerBackground="Blue" />
-  </Grid>
+  </Grid>-->
 </Window>

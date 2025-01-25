@@ -71,8 +71,8 @@
             <controls:PointerPathsCanvas
               Grid.Row="1"
               Grid.Column="1"
-              Width="960"
-              Height="960" />
+              Width="1920"
+              Height="1920" />
           </Grid>
         </ScrollViewer>
       </ControlTemplate>
